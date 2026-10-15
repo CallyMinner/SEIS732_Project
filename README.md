@@ -9,7 +9,11 @@ The project carries one approved business need and dataset through design, imple
 ## Project Milestones
 
 P0: Need, Audience, Dataset & Feasibility
+
 P1: Grain, Model, History & Pipeline Plan
+
 P2: Working Ingestion, Curation & Acceptance Checks
+
 P3: Serving, Reliability, Quality & Lineage
+
 P4: Access, Data Product, Documentation & Defense
