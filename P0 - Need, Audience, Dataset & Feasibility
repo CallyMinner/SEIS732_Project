@@ -1,0 +1,64 @@
+# P0 - Need, Audience, Dataset & Feasibility
+
+## Working Title
+
+Guiding Book Acquisition Decisions for an Independent Publishing House
+
+## Audience and Need
+
+### Specific audience, role, or user group
+
+### Decision, recurring task, or problem that audience faces
+
+### Why a data product could help
+
+### What the audience might do differently if the product is useful
+
+## Proposed Analytical Product and Questions
+
+## Source Identification and Access
+
+### Source dataset name and provider
+
+### Source URL
+
+### The BigQuery project and dataset identifiers visibile
+
+### Candidate tables or views and their location/region
+
+### Confirmation that the source is approved and currently accessible from the course environment
+
+### Any visible use, attribution or redistribution constraints relevant to the project
+
+## Quick Source Profile
+
+### Apparent meaning of one row in each candidate object
+
+### Current row count
+
+### Relevant date or time coverage
+
+### Possible IDs or keys, what each identifies, and whether values are missing or duplicated
+
+### Fields likely to support the proposed questions
+
+### Important null, duplicate, type, or semi-structured characteristics
+
+### Known refresh behavior
+
+### Any obvious sensitivity, aggregation, or interpretation concern
+
+## Need-to-Source Fit
+
+| Proposed question | Needed fields or concepts | Candidate source object(s) | Why the source appears sufficient| Gap or assumption to test in P1 |
+|---|---|---|---|---|
+
+
+## Feasibility Risks and Response
+
+## First P1 Decision
+
+## AI/Tool Accountability
+
+Used AI to find a free, public dataset.
+
