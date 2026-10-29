@@ -69,6 +69,7 @@ One attribute that could cause issues is `materialtype`. This notates whether th
 
 ## Plan the Build and its Checks
 |Layer|Planned Object|Purpose|
+|---|---|---|
 |Raw|`raw_library_checkouts`|Preserve the 2 million imported records with their original source fields and values.|
 |Curated|`curated_library_checkouts`|Standardize data types, handle missing values, validate the proposed grain, and prepare consistent material-type classifications.|
 |Serving|`FACT_CHECKOUTS`, `DIM_DATE`, `DIM_ITEM`, `DIM_CHECKOUT_CATEGORY`|Organize the curated data into a star schema for analyzing checkout patterns by year and material type.|
@@ -84,6 +85,7 @@ One attribute that could cause issues is `materialtype`. This notates whether th
 7. Make sure everything works and runs smoothly. Check the grain again
 
 |Stage|Field or Output|Planned Transformation|
+|---|---|---|
 |Source CSV|`checkouts`|Original monthly checkout count|
 |Raw|`checkouts`|Preserve the source value|
 |Curated|`checkouts`|Validate numeric type and check for null or negative values|
