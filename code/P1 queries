@@ -1,0 +1,73 @@
+WITH grain_groups AS (
+  SELECT
+    title,
+    creator,
+    checkoutyear,
+    checkoutmonth,
+    materialtype,
+    checkouttype,
+    usageclass,
+    COUNT(*) AS rows_per_id
+
+  FROM `universal-code-508122-p8.books_project.books`
+
+  GROUP BY
+    title,
+    creator,
+    checkoutyear,
+    checkoutmonth,
+    materialtype,
+    checkouttype,
+    usageclass
+)
+
+SELECT
+  COALESCE(SUM(rows_per_id), 0) AS source_rows,
+
+  COALESCE(SUM(
+    IF(
+      title IS NULL
+      OR creator IS NULL
+      OR checkoutyear IS NULL
+      OR checkoutmonth IS NULL
+      OR materialtype IS NULL
+      OR checkouttype IS NULL
+      OR usageclass IS NULL,
+      rows_per_id,
+      0
+    )
+  ), 0) AS rows_with_null_id,
+
+  COUNTIF(
+    title IS NOT NULL
+    AND creator IS NOT NULL
+    AND checkoutyear IS NOT NULL
+    AND checkoutmonth IS NOT NULL
+    AND materialtype IS NOT NULL
+    AND checkouttype IS NOT NULL
+    AND usageclass IS NOT NULL
+    AND rows_per_id > 1
+  ) AS repeated_id_groups
+
+FROM grain_groups;
+
+
+SELECT
+  checkoutyear,
+  COUNT(*) AS total_rows,
+  COUNTIF(
+    isbn IS NULL OR TRIM(isbn) = ''
+  ) AS rows_missing_isbn,
+  ROUND(
+    100 * COUNTIF(
+      isbn IS NULL OR TRIM(isbn) = ''
+    ) / COUNT(*),
+    2
+  ) AS percent_missing_isbn
+
+FROM `universal-code-508122-p8.books_project.books`
+
+GROUP BY checkoutyear
+ORDER BY checkoutyear;
+
+
