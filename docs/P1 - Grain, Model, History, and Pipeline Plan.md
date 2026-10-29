@@ -63,6 +63,7 @@ erDiagram
         INT category_key FK
         INT checkouts
     }
+```
 
 One attribute that could cause issues is `materialtype`. This notates whether the book that was checked out was a physical book, and ebook, an audiobook, etc. However, a publishing house doesn't care about the media type, just the title or genre. It may make sense to aggregate all titles month by month regardless of media type. There also might be different ways of notating the type. For example, ebook versus electronic book. This could be a Type 1 fix as it would just need to be standardized and edited, the version history in this case is not necessary and therefore wouldn't need a Type 2 handling. However, Type 2 handling could be helpful in preserving the documentation styles of the time period (with electronic media before 2022 and ebook after 2022, for a fake example). This is something I will have to deliberate further before P3 as it may or may not be something I use to answer my primary question. Although it could be useful information for secondary questions from a monetary standpoint (ebooks don't have the same printing costs). Additionally, while ISBN is included as an attribute in the item dimension, it is important to note that until the year 2022, the ISBN was not included in the dataset.
 
