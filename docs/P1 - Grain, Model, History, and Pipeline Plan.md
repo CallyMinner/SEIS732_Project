@@ -102,5 +102,8 @@ In terms of data privacy and access, there is no senstive information included i
 
 The largest limitation currently is likely the fact that this dataset is only a limited view of the Seattle Library's checkout history. However, because this is intended for an indie publishing house to view historical book trends, this may not be too big of an issue as long as the frequency of samples for each month in each year is taken into account.
 
+### Diagnose and Revise the Plan
+Peer review was completed in class.
 
+Note: Used AI to help with Google BigQuery loading of the dataset, creating a bucket, and then the mermaid code.
 
